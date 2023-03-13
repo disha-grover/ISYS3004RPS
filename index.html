@@ -11,12 +11,20 @@
   <h1>Rock, Paper or Scissors?</h1>
   <p> 
     <span class= "circle" onclick="play('rock')">R</span>
-    <span class="circle">P</span> 
-    <span class="circle">S</span> 
+    <span class="circle" onclick="play('paper')">P</span> 
+    <span class="circle" onclick="play('scissors')">S</span> 
   </p>
   <a class="instruction"
       href="https://en.wikipedia.org/wiki/Rock_paper_scissors">RULES</a>
     <script>
+      /* I found the text to speech code at the following URL. 
+      I wrapped it into a function
+      https://dev.to/asaoluelijah/text-to-speech-in-3-lines-of-javascript-b8h */ 
+      
+      function say(myMessage){
+        var msg = new SpeechSynthesisUtterance(myMessage);
+        window.speechSynthesis.speak(msg);
+      }
     /* This is a simplified version of the game.
       The Computer ALWAYS picks ROCK.  
       Does the user's choose win,lose, or tie vs ROCK? */
@@ -31,7 +39,9 @@
           if (user === 'scissors') {
               result = "lose";
           }
-          alert("Computer chose rock, you " + result + "!");
+          var theMessage = "Computer chose rock, you " + result + "!"
+          alert(theMessage);
+          say(theMessage); 
       }</script>
   
     </body>
