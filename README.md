@@ -1,2 +1,2 @@
 # ISYS3004RPS
-RPS Game - Exercise for Week 3 Module 
+Repository for the unit ISYS3004 - Mobile and Web Technologies. This repository includes the RPS Game created in Week 3 Module.
